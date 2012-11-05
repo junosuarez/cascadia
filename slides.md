@@ -36,3 +36,36 @@
 <img src="deicaza.jpg" />
 
 // additionally, I had a gut reaction of "OSS washing" surrounding the launch of TypeScript. Certainly compared to some of Microsoft's other OSS efforts, notably by the Azure team, the open sourcing of TypeScript felt a little tone-deaf. But the licensing checks out - the spec is freely licensed, and the compiler and services (implemented in TypeScript) are Apache 2 licensed.
+
+## WTFScript?
+- Codeplex? Come to where the devs are
+- Lack of documentation
+- 
+// if MS cares about Open Source adoption of TypeScript, they'll have to make more of an effort to build a community around the project - including coming to devs where they are. IRC, Github, Twitter, etc. I'm glad to see them participating in third-party forums such as Stack Overflow. It's a start, and I hope they'll come over to GitHub, since it's home to the best JavaScript community in the world.
+// Two more quick WTFs: lack of documentation. There is no actual reference-style documentation of the language features available on typescriptlang.org - just tutorials and the formal language spec. While the spec is awesome, it's only available in .doc and .pdf - not html, and not hyperlinkable. WTF?
+// Lastly, there aren't yet any implementations of the type of awesome tooling that TypeScript promises to provide in any environments outside of VisualStudio. How many here use Mac or Linux as your regular development OS? (Expect just about everyone) Okay, this is why MS needs to invest in tooling for us
+
+## TypeScript crash course
+## TypeScript is just JavaScript
+
+- `s/\.js/\.ts/` -> your project is now a valid TypeScript project.
+
+## `npm install -g typescript`
+- get typescript
+- the typescript compiler: tsc
+- let's do some stuff
+// as you can see, this output looks oddly similar to our input
+// with -c we can even emit comments
+// So, TypeScript _is_ JavaScript. A strict superset. Even the syntax highlighting works, more or less
+// we can immediately run our stuff from the console by adding an -e flag
+
+## ES6 sugar NOW!
+- light weight lambdas (arrow functions, lexically scoped `this`)
+- ...rest parameters
+- class keyword
+
+// lambdas are a huge win. 
+// rest parameters (no spread yet)
+// classes - meh, but it's coming in ES6, and the TypeScript team has expressed their intention to follow the ES6 spec as it changes. I won't cover it here a whole lot. The best defense I've heard is that if you're going to be doing this in your code anyway, you may as well have a "one true way" to do it, rather than mixing various techniques for approximating classical OO inheritance.
+// modules - this is great, because you can write future-proof code following the proposed ES6 module syntax, and the tsc will spit out CommonJS or AMD style modules so you can use it now in ES5 or ES3 environments.
+
