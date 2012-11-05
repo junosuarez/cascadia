@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # reveal.js
 
 A framework for easily creating beautiful presentations using HTML. [Check out the live demo](http://lab.hakim.se/reveal-js/).
@@ -261,3 +262,9 @@ MIT licensed
 
 Copyright (C) 2011-2012 Hakim El Hattab, http://hakim.se
 
+=======
+cascadia
+========
+
+TypeScript: The Good Parts - a talk given 11/9/2012 at @CascadiaJS in Seattle, WA
+>>>>>>> 5f8930615b7a26c075a3adb64f9e1504f44e10b5
