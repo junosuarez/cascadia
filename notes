@@ -1,0 +1,75 @@
+Title: TypeScript: The Good Parts
+Desc: Interfaces will save us all by making it easier to write modular, flexible systems - and TypeScript is here to help us do it in JS.
+
+
+Title slide: an oreilly inspired cover, maybe with an octopus, or some sort of Babel symbol - a ziggurat?
+
+People want to write JS. Parts of the node community in particular have reacted negatively to other languages targetting JS - in particular CoffeeScript.
+
+Interfaces are the API - they define the contract by which other parts of a system can pass messages to another part, what those messages should contain, and what type of response message they can expect.
+
+TypeScript needs generics!
+
+
+On overview of what TS offers:
+ES6 sugar:
+- arrow function notation with lexically scoped this
+- class keyword (for better or worse)
+- modules
+- rest parameters
+
+Some made up stuff:
+- public / private members
+
+The awesome bits:
+- optional static typing
+- structure-based type system (duck typing)
+- based on JS primitives
+
+WTFs?
+"soft" stuff:
+- lack of documentation - it's great to have the spec, but it's only in doc and pdf, no html (?)
+- development team doesn't run in "our circles": twitter, github, irc - rather, CodePlex and, uh, CodePlex.
+- not yet any implementations of great tooling in free software
+
+- boolean is called bool - not compatible with js `typeof`
+- no generics - makes it really hard to define interfaces with Streams and Promises* the language spec mentions they expect the final version to include them. please do, soon!
+- no way to define getters and setters in an interface (this is actually a good thing - this should be transparent to interfaces. thats the point of getters and setters. so this is a wtf for WebIDL. WebIDL seems to exist more to direct implementors, rather than guide consumers.)
+-- so the interface is good at describing static objects, but not implementation details
+
+Interfaces and Encapsulation
+
+SOLID comes from the OO canon, and as such is seemingly ignored by large swaths of JavaScript programmers
+Much of it still applies in a functional or hybrid paradigm.
+
+Lack of explicit interface notation is one of JavaScript's main limiting factors as a systems programming language. 
+Attempts have been made:
+-Google Closure Compiler type annotations, use JSDoc comments to annotate function signatures in-line in code
+ -- the annotations are not separable from their implementation
+ -- derrived types describe concrete implementations of constructors, not abstract interfaces
+ -- interfaces cannot be reopened, so you can't create an interface that specifies that an object implement two interfaces, for example
+- W3C uses WEBIDL to formally document DOM APIs http://www.w3.org/TR/2011/WD-WebIDL-20110927/
+- Apache Thrift, WSDL, ASN.1 (Abstract Syntax Notation), Microsoft M modeling language, and others - these are not JavaScript specific, and don't feel as native in a JS context.
+
+TypeScript uses interfaces which can be reopened, which can implement other interfaces, and which can completely describe JavsScript objects.
+Objects don't need to explicitly implement interfaces - implementation is determined statically. Any object which has properties matching those defined in an interfaces automatically implement that interface for the purpose of static type checking.
+- In this sense, interfaces in JS are even nicer than in C# - object authors don't need to implement a particular instance of an interface. Interfaces are de facto. No more creating stupid wrappers for interfaces.
+
+JavaScript is the bytecode of the web (cite Eich), so it makes sense to use an interface language that is based on JavaScript and its types, rather than generic language-agnostic languages which only exist to define interfaces. WebIDL, for example, makes strance concessions in trying to be agnostic between Java and JavaScript.
+
+Wait, why do I care?
+Infinite code reuse. Make it easier for people to consume your modules. Make it easier to consume other people's modules. You don't need to care about the implementation - just the interface. So you can use modules written in CoffeeScript, or Roy, or plain old JavaScript, or any other weird-ass language, and just program against the interface.
+
+For mere mortals, like me, who don't want to memorize APIs and would rather build things, having a common, machine-readable syntax for interface annotation enables better tooling. This doesn't have to be Visual Studio, or even a full-featured IDE. You can build it into your favorite text editor.
+Even if you don't use dev-time API reference, you can still look at all of the API declarations in a single place, without having to deceipher whatever interface annotation was invented by the authors of whatever library you're using.
+
+Library authors don't have to write their own TSDs for them to be useful - there's already a 3rd party TSD registry up on github. do `npm install tsd`
+
+Interfaces are how modules talk to each other. They make it easier to reason about your codebase as a system, with different parts which clearly define what they need and what they do. They just describe syntax, not semantics - plain language documentation is still necessary to make sure your program is doing what you want it to do. But machine-readable interfaces let the computer verify that what you're trying to do is legal.
+
+JavaScript does not have signature-based dispatching, so a single function can have multiple signatures which do different things. This makes annotating the expected signatures even more important.
+
+======
+The Tower of Babel story
+
+
