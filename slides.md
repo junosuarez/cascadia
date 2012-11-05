@@ -69,3 +69,48 @@
 // classes - meh, but it's coming in ES6, and the TypeScript team has expressed their intention to follow the ES6 spec as it changes. I won't cover it here a whole lot. The best defense I've heard is that if you're going to be doing this in your code anyway, you may as well have a "one true way" to do it, rather than mixing various techniques for approximating classical OO inheritance.
 // modules - this is great, because you can write future-proof code following the proposed ES6 module syntax, and the tsc will spit out CommonJS or AMD style modules so you can use it now in ES5 or ES3 environments.
 
+## The <del>Good</del> Totally Rad Parts
+- interfaces
+- optional static typing
+- type inference
+- structure-based type system (duck typing)
+- based on JS primitives
+
+## Two technical WTFs
+- `boolean` is called `bool`
+- no generics (eg `Promise<ModelObj>`)
+-- coming soon?
+- there are not yet any fully open source implementations of the great tooling in free software, although all the intellisense services are provided by the open source compiler, so there's nothing but lack of will and documentation to stop anyone (you) from implementing it in your favorite text editor.
+
+## Why you should use TypeScript
+- in a word, interfaces
+
+## Some tools
+- Visual Studio Express Web
+- tsd
+
+// get best-in-class intellisense, even on plain javascript (thanks to declarations for external APIs)
+// express web is free, if you have windows. you can even get sneaky and run it on an IE compatibility VHD, if you get desperate. If you're at at startup, you should check out BizSpark and get hella free MS licenses
+// tsd is a neat command line node tool (`npm install tsd`) to search for typescript declarations for popular third party libraries. you can contribute to this effort - they're hosted at http://github.com/borisyankov/DefinitelyTyped - you should fork it and send a pull request with your own declaration file
+
+## Interfaces, Interfaces everywhere!
+
+## Other attempts at Syntax Modeling
+Google Closure Compiler type annotations
+WebIDL
+- Language agnostic
+Apache Thrift (nee Facebook)
+WSDL
+ASN.1
+Microsoft M
+
+// Google closure compiler gets very close to the features of TypeScript
+
+// the problem with generic interface modeling languages is that they're not specific to javascript types
+// since javascript is the bytecode of the web, it makes sense to use a modeling language that models JavaScript types and objects with high fidelity
+
+
+// interfaces are incredibly full of win
+// tower of babel
+// more tower of babel imagery, tell the story, etc
+
