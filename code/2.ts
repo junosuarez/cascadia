@@ -4,9 +4,9 @@ function app(cb) {
   setTimeout(() => {
     cb(this.answer);
     // lexically scoped `this` is exactly what we want here
-    // check the .js to see that it handles all the 
+    // check the .js to see that it handles all the
     // `var _this = this` garbage for you
-  }, 0); 
+  }, 0);
 }
 
 
